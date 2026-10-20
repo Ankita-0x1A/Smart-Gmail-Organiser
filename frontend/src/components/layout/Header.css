@@ -1,0 +1,151 @@
+.header {
+  height: 60px;
+  min-height: 60px;
+  background-color: var(--bg-surface);
+  border-bottom: 1px solid var(--border-neutral);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-6);
+  gap: var(--space-4);
+  z-index: 5;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  min-width: 0;
+}
+
+.header-title-wrap {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+}
+
+.header-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+.header-count-badge {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  background-color: var(--bg-surface-subtle);
+  padding: 1px 8px;
+  border-radius: var(--radius-full);
+}
+
+/* Search Bar */
+.header-search-wrap {
+  flex: 1;
+  max-width: 440px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.header-search-icon {
+  position: absolute;
+  left: 12px;
+  color: var(--text-dim);
+  pointer-events: none;
+}
+
+.header-search-input {
+  width: 100%;
+  height: 36px;
+  padding: 0 32px 0 36px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-neutral);
+  background-color: var(--bg-app);
+  font-size: 13px;
+  color: var(--text-main);
+  transition: all 0.15s ease;
+}
+
+.header-search-input::placeholder {
+  color: var(--text-dim);
+}
+
+.header-search-input:focus {
+  border-color: var(--primary-400);
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.12);
+}
+
+.header-search-clear {
+  position: absolute;
+  right: 10px;
+  color: var(--text-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  border-radius: 50%;
+}
+
+.header-search-clear:hover {
+  color: var(--text-secondary);
+}
+
+/* Header Right Actions */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-shrink: 0;
+}
+
+/* Gmail Status Pill */
+.gmail-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  font-weight: 600;
+  border: 1px solid var(--border-neutral);
+  background-color: var(--bg-surface);
+  color: var(--text-secondary);
+  transition: all 0.15s ease;
+}
+
+.gmail-status-pill.connected {
+  border-color: #bbf7d0;
+  background-color: #f0fdf4;
+  color: #166534;
+}
+
+.gmail-status-pill.not-connected {
+  border-color: #fed7aa;
+  background-color: #fff7ed;
+  color: #9a3412;
+  cursor: pointer;
+}
+
+.gmail-status-pill.not-connected:hover {
+  background-color: #ffedd5;
+  border-color: #fdba74;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.status-dot.active {
+  background-color: #22c55e;
+  box-shadow: 0 0 6px #22c55e;
+}
+
+.status-dot.idle {
+  background-color: #f97316;
+}

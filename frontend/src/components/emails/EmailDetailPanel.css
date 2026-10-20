@@ -1,0 +1,302 @@
+.email-detail-pane {
+  flex: 1;
+  height: 100%;
+  background-color: var(--bg-surface);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.email-detail-placeholder {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  padding: var(--space-8);
+  text-align: center;
+}
+
+.email-detail-placeholder-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-lg);
+  background-color: var(--bg-app);
+  border: 1px solid var(--border-neutral);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-dim);
+  margin-bottom: var(--space-4);
+}
+
+/* Detail Header Toolbar */
+.detail-toolbar {
+  height: 52px;
+  min-height: 52px;
+  padding: 0 var(--space-6);
+  border-bottom: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--bg-surface);
+  gap: var(--space-3);
+}
+
+.detail-toolbar-left,
+.detail-toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.toolbar-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: var(--radius-md);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-neutral);
+  background-color: var(--bg-surface);
+  transition: all 0.15s ease;
+}
+
+.toolbar-btn:hover:not(:disabled) {
+  background-color: var(--bg-surface-subtle);
+  color: var(--text-main);
+  border-color: var(--border-strong);
+}
+
+.toolbar-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.toolbar-btn.ai-classify-btn {
+  background: linear-gradient(135deg, #ede9fe, #f5f3ff);
+  color: #6d28d9;
+  border-color: #ddd6fe;
+  font-weight: 600;
+}
+
+.toolbar-btn.ai-classify-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #ddd6fe, #ede9fe);
+  border-color: #c4b5fd;
+  color: #5b21b6;
+}
+
+/* Scrollable Detail Body */
+.detail-scroll-area {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-6) var(--space-8);
+}
+
+/* Subject & Meta */
+.detail-subject-header {
+  margin-bottom: var(--space-4);
+}
+
+.detail-subject {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+
+/* Sender, Date, Category Area */
+.detail-meta-box {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--border-light);
+  margin-bottom: var(--space-5);
+  gap: var(--space-4);
+}
+
+.detail-sender-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.detail-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #c4b5fd, #8b5cf6);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.detail-sender-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-sender-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.detail-sender-email {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.detail-date {
+  font-size: 12px;
+  color: var(--text-dim);
+  white-space: nowrap;
+}
+
+/* Assigned Categories Bar */
+.detail-categories-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 10px 14px;
+  background-color: var(--bg-app);
+  border: 1px solid var(--border-neutral);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-5);
+}
+
+.categories-bar-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  letter-spacing: 0.05em;
+  margin-right: 4px;
+}
+
+.categories-chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Category Assign Dropdown Menu */
+.assign-cat-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.assign-cat-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  border: 1px dashed var(--border-strong);
+  background-color: #ffffff;
+  transition: all 0.15s ease;
+}
+
+.assign-cat-btn:hover {
+  border-color: var(--primary-500);
+  color: var(--primary-600);
+}
+
+.assign-cat-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 6px;
+  background-color: #ffffff;
+  border: 1px solid var(--border-neutral);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  width: 220px;
+  z-index: 50;
+  padding: 8px 0;
+  max-height: 260px;
+  overflow-y: auto;
+}
+
+.assign-cat-header {
+  padding: 4px 12px 6px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  border-bottom: 1px solid var(--border-light);
+  margin-bottom: 4px;
+}
+
+.assign-cat-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7px 12px;
+  font-size: 12px;
+  color: var(--text-main);
+  text-align: left;
+  transition: background-color 0.1s ease;
+  cursor: pointer;
+}
+
+.assign-cat-item:hover {
+  background-color: var(--bg-surface-subtle);
+}
+
+.assign-cat-item.already-assigned {
+  background-color: var(--primary-50);
+  color: var(--primary-700);
+  font-weight: 600;
+}
+
+/* AI Classification Toast/Banner */
+.ai-reason-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 14px;
+  background-color: #f5f3ff;
+  border: 1px solid #ddd6fe;
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-5);
+  font-size: 12px;
+  color: #5b21b6;
+  line-height: 1.5;
+}
+
+.ai-reason-icon {
+  flex-shrink: 0;
+  color: #7c3aed;
+  margin-top: 1px;
+}
+
+/* Email Body Content */
+.detail-body-content {
+  font-size: 14px;
+  line-height: 1.65;
+  color: #1e293b;
+  word-break: break-word;
+}
+
+.detail-body-content pre {
+  white-space: pre-wrap;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.65;
+}

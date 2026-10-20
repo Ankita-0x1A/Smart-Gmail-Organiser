@@ -1,0 +1,32 @@
+.dashboard-root {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--bg-app);
+}
+
+.dashboard-main-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  min-width: 0;
+  overflow: hidden;
+}
+
+/* Two-column view: compact email list + large reading panel */
+.dashboard-content-split {
+  flex: 1;
+  display: flex;
+  height: calc(100vh - 60px);
+  overflow: hidden;
+  background-color: var(--bg-surface);
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .dashboard-content-split {
+    position: relative;
+  }
+}
